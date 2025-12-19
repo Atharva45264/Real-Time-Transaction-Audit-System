@@ -75,3 +75,34 @@ table th {
 table tr:nth-child(even) {
   background-color: #f9fafb;
 }
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 14px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+.info ul {
+  padding-left: 20px;
+}
+
+.info li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
