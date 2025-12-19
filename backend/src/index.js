@@ -10,6 +10,7 @@ require("./models/Transaction");
 
 // Routes
 const transferRoutes = require("./routes/transferRoutes");
+const historyRoutes = require("./routes/historyRoutes");
 
 // Create app FIRST
 const app = express();
@@ -20,6 +21,10 @@ app.use(express.json());
 
 // Routes
 app.use("/api", transferRoutes);
+app.use("/api", historyRoutes);
+
+
+
 
 // Health check route
 app.get("/", (req, res) => {
