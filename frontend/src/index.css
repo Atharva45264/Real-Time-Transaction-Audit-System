@@ -1,52 +1,103 @@
+/* ===============================
+   THEME VARIABLES (Fintech Style)
+================================ */
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --accent: #22c55e;
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #0f172a;
+  --muted: #555;
+  --border: #e5e7eb;
+}
+
+/* ===============================
+   GLOBAL STYLES
+================================ */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
+  background-color: var(--bg);
+  color: var(--text);
   margin: 0;
   padding: 0;
 }
 
 .container {
-  max-width: 600px;
-  margin: 50px auto;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 15px;
 }
 
-h1 {
+/* ===============================
+   HEADER
+================================ */
+.header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
+.header h1 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===============================
+   CARD COMPONENT
+================================ */
 .card {
-  background: #ffffff;
+  background: var(--card-bg);
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
 }
 
 .card h2 {
   margin-bottom: 15px;
 }
 
-input {
+/* ===============================
+   FORM ELEMENTS
+================================ */
+input,
+select {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
 }
 
 button {
   width: 100%;
   padding: 10px;
-  background-color: #2563eb;
+  background-color: var(--primary);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 button:hover {
-  background-color: #1e40af;
+  background-color: var(--primary-dark);
 }
 
 .message {
@@ -54,15 +105,19 @@ button:hover {
   font-weight: bold;
 }
 
+/* ===============================
+   TABLE (Transaction History)
+================================ */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
+  font-size: 14px;
 }
 
 table th,
 table td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   padding: 8px;
   text-align: center;
 }
@@ -76,33 +131,63 @@ table tr:nth-child(even) {
   background-color: #f9fafb;
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 40px;
+/* ===============================
+   INFO GRID (How It Works)
+================================ */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
 }
 
-.subtitle {
-  color: #555;
-  font-size: 14px;
-}
-
-.card {
-  background: #ffffff;
-  padding: 20px;
+.info-card {
+  background: #f1f5f9;
+  padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px;
+  text-align: center;
 }
 
-.card h2 {
-  margin-bottom: 15px;
+.info-card .icon {
+  font-size: 28px;
+  margin-bottom: 8px;
 }
 
-.info ul {
-  padding-left: 20px;
+.info-card h3 {
+  margin: 8px 0;
 }
 
-.info li {
-  margin-bottom: 10px;
-  line-height: 1.5;
+.info-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ===============================
+   ANIMATIONS (SUBTLE & SAFE)
+================================ */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE TWEAKS
+================================ */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px auto;
+  }
+
+  table {
+    font-size: 12px;
+  }
 }
