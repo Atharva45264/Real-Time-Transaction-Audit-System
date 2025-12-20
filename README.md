@@ -38,7 +38,7 @@ The system ensures that every fund transfer is executed safely and consistently,
 ### Frontend
 - React (Vite)
 - Axios
-- Custom CSS (fintech-style UI)
+- Custom CSS 
 
 ### AI Tools Used
 - ChatGPT
